@@ -2,3 +2,6 @@
 *.pot
 *.py[co]
 docs/_build/
+/.idea
+*.orig
+*.rej

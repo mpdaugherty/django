@@ -70,6 +70,7 @@ class DatabaseFeatures(BaseDatabaseFeatures):
     requires_rollback_on_dirty_transaction = True
     has_real_datatype = True
     can_defer_constraint_checks = True
+    has_bulk_insert= True
 
 class DatabaseOperations(PostgresqlDatabaseOperations):
     def last_executed_query(self, cursor, sql, params):
