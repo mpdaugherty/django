@@ -658,6 +658,9 @@ class Query(object):
 
         Returns True if the join was promoted.
         """
+        lhs = self.alias_map[alias][LHS_ALIAS]
+        if lhs and self.alias_map[lhs][JOIN_TYPE] == self.LOUTER:
+            unconditional = True
         if ((unconditional or self.alias_map[alias][NULLABLE]) and
                 self.alias_map[alias][JOIN_TYPE] != self.LOUTER):
             data = list(self.alias_map[alias])
